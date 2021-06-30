@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">* {cursor: url(https://cur.cursors-4u.net/symbols/sym-1/sym57.cur), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2005/06/03/sym57.html" target="_blank" title="Rock On"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Rock On" style="position:absolute; top: 0px; right: 0px;" /></a>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="cursor1"></div>
+<div class="cursor"></div>
+
+<section class="main">
+  <h1>Cursor Animation</h1>
+</section>
+
+<script type="text/javascript">
+const cursor = document.querySelector(".cursor");
+var timeout;
+
+//follow cursor on mousemove
+document.addEventListener("mousemove", (e) => {
+  let x = e.pageX;
+  let y = e.pageY;
+
+  cursor.style.top = y + "px";
+  cursor.style.left = x + "px";
+  cursor.style.display = "block";
+
+  //cursor effects when mouse stopped
+  function mouseStopped(){
+    cursor.style.display = "none";
+  }
+  clearTimeout(timeout);
+  timeout = setTimeout(mouseStopped, 1000);
+});
+
+//cursor effects when mouseout
+document.addEventListener("mouseout", () => {
+  cursor.style.display = "none";
+});
+</script>
+
+</body>
+</html>
